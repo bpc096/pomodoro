@@ -1,6 +1,7 @@
 # To change time speed and time duration
 
-To change time speed, go to #### resume()
+To change time speed, go to
+#### resume()
 
 change the variable (number 10), and choose from 10 (sonic the hedgehog fast), 100 (okay fast), 1000 (normal time)
 
