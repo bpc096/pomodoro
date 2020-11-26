@@ -50,7 +50,7 @@ public class WorkUI extends JFrame{
 		getContentPane().add(lblWorkTime);
 		
 		// show pause and resume button
-		btnWorkResume.setIcon(new ImageIcon("C:\\Users\\naufa\\Desktop\\project\\res\\play.png"));
+		btnWorkResume.setIcon(new ImageIcon("res/play.png"));
 		btnWorkResume.setBounds(162, 123, 97, 25);
 		btnWorkResume.setBorderPainted(false); 
 		btnWorkResume.setContentAreaFilled(false); 
