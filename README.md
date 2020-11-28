@@ -9,8 +9,9 @@ front end sudah dibenerin / jadi:
 
 backend sudah jadi, tetapi masih ada bug:
 + state sudah bisa jalan dengan lancar (sampai ke long break)
-+ sudah bisa nambah stats pada hari ini di statistic (tapi masih error) karena harus ada file yang harus dibaca.
-- kodingan masih barbar, tapi program sudah jadi. Harus diperbaiki
++ kalau program sudah dijalankan dan sampai akhir longbreak, nanti statistik sudah bisa nambah angka 1 sesuai hari pomodoro dijalankan
+- walaupun sudah jadi, statistik masih tidak bisa tersimpan, alias kalau pomodoro dijalankan lagi akan tereset
+- kodingan masih barbar, tapi program sudah jadi. Harus dirapihin (banyak class tidak terpakai)
 
 # To change time speed and time duration
 
