@@ -14,12 +14,19 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
+import state.State;
+
 public class BreakUI extends JFrame{
+	JLabel breakState1 = new JLabel();
+	JLabel breakState2 = new JLabel();
+	JLabel breakState3 = new JLabel();
+	JLabel breakState4 = new JLabel();
 	JButton btnBreakSkip = new JButton();
 	JButton btnBreakResume = new JButton();
 	JLabel lblBreakTime = new JLabel("05:00");
 	JButton btnBreakViewStats = new JButton("view stats");
 	
+	int state = 1;
 	int breakSecond = 0;
 	int breakMinute = 5;
 	String ddBreakSecond, ddBreakMinute;
@@ -27,9 +34,9 @@ public class BreakUI extends JFrame{
 	
 	boolean clicked = true;
 	DecimalFormat dFormat = new DecimalFormat("00");
-
-	// Create the application.
-	public BreakUI() {
+	
+	public BreakUI(int state) {
+		this.state = state;
 		breakInitialize();
 	}
 
@@ -79,37 +86,35 @@ public class BreakUI extends JFrame{
 		getContentPane().add(btnBreakSkip);
 			
 		// show state 1
-		JLabel breakState1 = new JLabel();
 		breakState1.setIcon(new ImageIcon("res/outline_dot.png"));
 		breakState1.setBounds(185, 175, 26, 16);
 			
 		getContentPane().add(breakState1);
 			
 		// show state 2
-		JLabel breakState2 = new JLabel();
 		breakState2.setIcon(new ImageIcon("res/outline_dot.png"));
 		breakState2.setBounds(208, 175, 26, 16);
 			
 		getContentPane().add(breakState2);
 			
 		// show state 3
-		JLabel breakState3 = new JLabel();
 		breakState3.setIcon(new ImageIcon("res/outline_dot.png"));
 		breakState3.setBounds(234, 175, 26, 16);
 			
 		getContentPane().add(breakState3);
 			
 		// show state 4
-		JLabel breakState4 = new JLabel();
 		breakState4.setIcon(new ImageIcon("res/outline_dot.png"));
 		breakState4.setBounds(162, 175, 26, 16);
 			
 		getContentPane().add(breakState4);
+		
+		wState();
 	}
 		
 	// to start the timer
 	private void resume() {
-		breakTimer = new Timer(1000, new ActionListener() {
+		breakTimer = new Timer(10, new ActionListener() {
 				
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -130,7 +135,10 @@ public class BreakUI extends JFrame{
 				if(breakMinute == 0 && breakSecond == 0) {
 					breakTimer.stop();
 					setVisible(false);
-					new WorkUI().setVisible(true);
+					state += 1;
+					
+					WorkUI w = new WorkUI(state);
+					w.setVisible(true);
 				}
 			}
 		});
@@ -140,8 +148,11 @@ public class BreakUI extends JFrame{
 	private void btnSkip() {
 		btnBreakSkip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new WorkUI().setVisible(true);
+				breakTimer.stop();
 				setVisible(false);
+				state += 1;
+				WorkUI w = new WorkUI(state);
+				w.setVisible(true);
 			}
 		});
 	}
@@ -184,5 +195,29 @@ public class BreakUI extends JFrame{
 		setIconImage(new ImageIcon("res/tomato.png").getImage());
 		setTitle("Pomodoro");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	
+	private void wState() {
+		if(state == 1) {
+			breakState4.setIcon(new ImageIcon("res/filled_dot.png"));
+		}
+		
+		if(state == 2) {
+			breakState1.setIcon(new ImageIcon("res/filled_dot.png"));
+			breakState4.setIcon(new ImageIcon("res/filled_dot.png"));
+		}
+		
+		if(state == 3) {
+			breakState2.setIcon(new ImageIcon("res/filled_dot.png"));
+			breakState4.setIcon(new ImageIcon("res/filled_dot.png"));
+			breakState1.setIcon(new ImageIcon("res/filled_dot.png"));
+		}
+		
+		if(state == 4) {
+			breakState3.setIcon(new ImageIcon("res/filled_dot.png"));
+			breakState4.setIcon(new ImageIcon("res/filled_dot.png"));
+			breakState1.setIcon(new ImageIcon("res/filled_dot.png"));
+			breakState2.setIcon(new ImageIcon("res/filled_dot.png"));
+		}
 	}
 }

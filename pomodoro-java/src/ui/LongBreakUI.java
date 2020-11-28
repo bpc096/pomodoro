@@ -77,39 +77,11 @@ public class LongBreakUI extends JFrame{
 			btnLongBreakSkip.setOpaque(false);
 			btnSkip();
 			getContentPane().add(btnLongBreakSkip);
-			
-			// show state 1
-			JLabel longBreakState1 = new JLabel();
-			longBreakState1.setIcon(new ImageIcon("res/outline_dot.png"));
-			longBreakState1.setBounds(185, 175, 26, 16);
-				
-			getContentPane().add(longBreakState1);
-				
-			// show state 2
-			JLabel longBreakState2 = new JLabel();
-			longBreakState2.setIcon(new ImageIcon("res/outline_dot.png"));
-			longBreakState2.setBounds(208, 175, 26, 16);
-				
-			getContentPane().add(longBreakState2);
-				
-			// show state 3
-			JLabel longBreakState3 = new JLabel();
-			longBreakState3.setIcon(new ImageIcon("res/outline_dot.png"));
-			longBreakState3.setBounds(234, 175, 26, 16);
-				
-			getContentPane().add(longBreakState3);
-				
-			// show state 4
-			JLabel longBreakState4 = new JLabel();
-			longBreakState4.setIcon(new ImageIcon("res/outline_dot.png"));
-			longBreakState4.setBounds(162, 175, 26, 16);
-				
-			getContentPane().add(longBreakState4);
 		}
 		
 	// to start the timer
 	private void resume() {
-		LongBreakTimer = new Timer(1000, new ActionListener() {
+		LongBreakTimer = new Timer(10, new ActionListener() {
 				
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -129,7 +101,11 @@ public class LongBreakUI extends JFrame{
 					
 				if(LongBreakMinute == 0 && LongBreakSecond == 0) {
 					LongBreakTimer.stop();
+					setVisible(false);
 					new WorkUI().setVisible(true);
+					ViewStats stat = new ViewStats();
+					stat.addCount();
+					stat.setVisible(true);
 				}
 			}
 		});
@@ -139,6 +115,8 @@ public class LongBreakUI extends JFrame{
 	private void btnSkip() {
 		btnLongBreakSkip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				LongBreakTimer.stop();
+				setVisible(false);
 				new WorkUI().setVisible(true);
 			}
 		});

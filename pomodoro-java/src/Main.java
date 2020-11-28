@@ -6,7 +6,6 @@ import ui.WorkUI;
 
 public class Main extends JFrame
 {
-
 	public Main() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

@@ -9,10 +9,16 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import net.miginfocom.swing.MigLayout;
 
 public class ViewStats extends JFrame{
 
+	JLabel tuesdayLbl, wednesdayLbl, thursdayLbl, fridayLbl, saturdayLbl, sundayLbl, mondayLbl;
+	JLabel tuesday, wednesday, thursday, friday, saturday, sunday, monday;
+	
 	public ViewStats() {
 		initialize();
 	}
@@ -21,48 +27,55 @@ public class ViewStats extends JFrame{
 	private void initialize() {
 		config();
 		
-		JLabel lblNewLabel = new JLabel("Tuesday");
-		getContentPane().add(lblNewLabel, "cell 0 0");
+		tuesdayLbl = new JLabel("Tuesday");
+		getContentPane().add(tuesdayLbl, "cell 0 0");
 		
-		JLabel lblNewLabel_1 = new JLabel("Wednesday");
-		getContentPane().add(lblNewLabel_1, "cell 2 0");
+		wednesdayLbl = new JLabel("Wednesday");
+		getContentPane().add(wednesdayLbl, "cell 2 0");
 		
-		JLabel lblNewLabel_2 = new JLabel("Thursday");
-		getContentPane().add(lblNewLabel_2, "cell 4 0");
+		thursdayLbl = new JLabel("Thursday");
+		getContentPane().add(thursdayLbl, "cell 4 0");
 		
-		JLabel lblNewLabel_3 = new JLabel("Friday");
-		getContentPane().add(lblNewLabel_3, "cell 6 0");
+		fridayLbl = new JLabel("Friday");
+		getContentPane().add(fridayLbl, "cell 6 0");
 		
-		JLabel lblNewLabel_4 = new JLabel("Saturday");
-		getContentPane().add(lblNewLabel_4, "cell 8 0");
+		saturdayLbl = new JLabel("Saturday");
+		getContentPane().add(saturdayLbl, "cell 8 0");
 		
-		JLabel lblNewLabel_6 = new JLabel("Sunday");
-		getContentPane().add(lblNewLabel_6, "cell 12 0");
+		sundayLbl = new JLabel("Sunday");
+		getContentPane().add(sundayLbl, "cell 12 0");
 		
-		JLabel lblNewLabel_14 = new JLabel("Monday");
-		getContentPane().add(lblNewLabel_14, "cell 10 0");
+		mondayLbl = new JLabel("Monday");
+		getContentPane().add(mondayLbl, "cell 10 0");
 		
-		JLabel lblNewLabel_7 = new JLabel("0");
-		getContentPane().add(lblNewLabel_7, "cell 0 1");
+		tuesday = new JLabel("0");
+		getContentPane().add(tuesday, "cell 0 1");
 		
-		JLabel lblNewLabel_8 = new JLabel("0");
-		getContentPane().add(lblNewLabel_8, "cell 2 1");
+		wednesday = new JLabel("0");
+		getContentPane().add(wednesday, "cell 2 1");
 		
-		JLabel lblNewLabel_9 = new JLabel("0");
-		getContentPane().add(lblNewLabel_9, "cell 4 1");
+		thursday = new JLabel("0");
+		getContentPane().add(thursday, "cell 4 1");
 		
-		JLabel lblNewLabel_10 = new JLabel("0");
-		getContentPane().add(lblNewLabel_10, "cell 6 1");
+		friday = new JLabel("0");
+		getContentPane().add(friday, "cell 6 1");
 		
-		JLabel lblNewLabel_11 = new JLabel("0");
-		getContentPane().add(lblNewLabel_11, "cell 8 1");
+		saturday = new JLabel("0");
+		getContentPane().add(saturday, "cell 8 1");
 		
-		JLabel lblNewLabel_12 = new JLabel("0");
-		getContentPane().add(lblNewLabel_12, "cell 10 1");
+		sunday = new JLabel("0");
+		getContentPane().add(sunday, "cell 10 1");
 		
-		JLabel lblNewLabel_13 = new JLabel("0");
-		getContentPane().add(lblNewLabel_13, "cell 12 1");
+		monday = new JLabel("0");
+		getContentPane().add(monday, "cell 12 1");
 		
+	}
+	
+	public void addCount() {
+		SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+		String temp = sdf.format(new Date());
+		String getDay = temp.toLowerCase();
+		validateDay(getDay);
 	}
 	
 	private void config() {
@@ -73,5 +86,59 @@ public class ViewStats extends JFrame{
 		setTitle("Pomodoro");
 		getContentPane().setLayout(new MigLayout("", "[][][][][][][][][][][][][]", "[][]"));
 		
+	}
+	
+	private void validateDay(String day) {
+		String stringTemp = "";
+		int intTemp = 0;
+		if(day.equals("monday")) {
+			stringTemp = monday.getText().toString();
+			intTemp = Integer.parseInt(stringTemp);
+			intTemp += 1;
+			stringTemp = Integer.toString(intTemp);
+			monday.setText(stringTemp);
+		}
+		if(day.equals("tuesday")) {
+			stringTemp = tuesday.getText().toString();
+			intTemp = Integer.parseInt(stringTemp);
+			intTemp += 1;
+			stringTemp = Integer.toString(intTemp);
+			tuesday.setText(stringTemp);
+		}
+		if(day.equals("wednesday")) {
+			stringTemp = wednesday.getText().toString();
+			intTemp = Integer.parseInt(stringTemp);
+			intTemp += 1;
+			stringTemp = Integer.toString(intTemp);
+			wednesday.setText(stringTemp);
+		}
+		if(day.equals("thursday")) {
+			stringTemp = thursday.getText().toString();
+			intTemp = Integer.parseInt(stringTemp);
+			intTemp += 1;
+			stringTemp = Integer.toString(intTemp);
+			thursday.setText(stringTemp);
+		}
+		if(day.equals("friday")) {
+			stringTemp = friday.getText().toString();
+			intTemp = Integer.parseInt(stringTemp);
+			intTemp += 1;
+			stringTemp = Integer.toString(intTemp);
+			friday.setText(stringTemp);
+		}
+		if(day.equals("saturday")) {
+			stringTemp = saturday.getText().toString();
+			intTemp = Integer.parseInt(stringTemp);
+			intTemp += 1;
+			stringTemp = Integer.toString(intTemp);
+			saturday.setText(stringTemp);
+		}
+		if(day.equals("sunday")) {
+			stringTemp = sunday.getText().toString();
+			intTemp = Integer.parseInt(stringTemp);
+			intTemp += 1;
+			stringTemp = Integer.toString(intTemp);
+			sunday.setText(stringTemp);
+		}
 	}
 }
