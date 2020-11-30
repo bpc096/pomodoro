@@ -1,12 +1,25 @@
+import java.awt.EventQueue;
 
-public class Main {
+import javax.swing.JFrame;
 
+import ui.WorkUI;
+
+public class Main extends JFrame
+{
 	public Main() {
-		// TODO Auto-generated constructor stub
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					WorkUI window = new WorkUI();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		new Main();
 
 	}
 
