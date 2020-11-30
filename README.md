@@ -12,8 +12,7 @@ cd pomodoro
 ```
 
 Please Use Eclipse IDE for better performance, you can use some Java IDE to run this project.
-
-#### Coding yourself and enjoyed!
+Coding yourself and enjoyed!
 
 #### DOCUMENTATION
 front end sudah dibenerin / jadi:
