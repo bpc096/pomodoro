@@ -1,4 +1,19 @@
+# Pomodoro - Java
+Tugas Project Pomodoro untuk matakuliah Framework Layer Architecture
 
+## Run the Java Program
+
+#### Prepare the Project :
+On your local machine, clone this repo:
+
+```
+git clone https://github.com/bpc096/pomodoro
+cd pomodoro
+```
+
+Please Use Eclipse IDE for better performance, you can use some Java IDE to run this project.
+
+#### Coding yourself and enjoyed!
 
 #### DOCUMENTATION
 front end sudah dibenerin / jadi:
