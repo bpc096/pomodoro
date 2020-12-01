@@ -1,9 +1,5 @@
 package observer;
 
-public class Observer {
-
-	public Observer() {
-		// TODO Auto-generated constructor stub
-	}
-
+public interface Observer<T> {
+	public void update();
 }

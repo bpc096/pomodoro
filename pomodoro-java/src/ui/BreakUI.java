@@ -14,8 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
-import state.State;
-
 public class BreakUI extends JFrame{
 	JLabel breakState1 = new JLabel();
 	JLabel breakState2 = new JLabel();

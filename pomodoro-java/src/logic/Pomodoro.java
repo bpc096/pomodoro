@@ -1,9 +1,31 @@
 package logic;
 
-public class Pomodoro {
+import java.util.Vector;
+
+import event.Event;
+import observer.Observer;
+import observer.Observerable;
+
+public class Pomodoro implements Observerable<Event>{
+	private Vector<Observer<Event>> observers;
 	
 	public Pomodoro() {
-		// TODO Auto-generated constructor stub
+		observers = new Vector<>();
 	}
+
+	@Override
+	public void broadcast() {
+		for(Observer<Event> obs : observers) {
+			obs.update();
+		}
+		
+	}
+
+	@Override
+	public void addObserver(Observer<Event> obs) {
+		observers.add(obs);
+	}
+	
+	
 
 }

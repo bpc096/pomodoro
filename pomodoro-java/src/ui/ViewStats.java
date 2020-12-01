@@ -1,14 +1,10 @@
 package ui;
 
-import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import java.awt.GridBagLayout;
 import javax.swing.JLabel;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

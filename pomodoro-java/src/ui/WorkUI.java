@@ -5,11 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
-import logic.Pomodoro;
-import state.State;
 
 import java.awt.Font;
-import java.awt.Window;
 import java.awt.Color;
 import java.awt.Dimension;
 
