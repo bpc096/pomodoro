@@ -14,6 +14,10 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
+import event.SaveBreak;
+import event.SaveWork;
+import logic.Pomodoro;
+
 public class BreakUI extends JFrame{
 	JLabel breakState1 = new JLabel();
 	JLabel breakState2 = new JLabel();
@@ -131,9 +135,13 @@ public class BreakUI extends JFrame{
 				}
 					
 				if(breakMinute == 0 && breakSecond == 0) {
+					//selesai break
 					breakTimer.stop();
 					setVisible(false);
 					state += 1;
+					
+					Pomodoro p = new Pomodoro();
+					p.broadcast(new SaveBreak());
 					
 					WorkUI w = new WorkUI(state);
 					w.setVisible(true);

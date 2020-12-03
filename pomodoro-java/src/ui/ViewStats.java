@@ -39,10 +39,10 @@ public class ViewStats extends JFrame{
 		getContentPane().add(saturdayLbl, "cell 8 0");
 		
 		sundayLbl = new JLabel("Sunday");
-		getContentPane().add(sundayLbl, "cell 12 0");
+		getContentPane().add(sundayLbl, "cell 10 0");
 		
 		mondayLbl = new JLabel("Monday");
-		getContentPane().add(mondayLbl, "cell 10 0");
+		getContentPane().add(mondayLbl, "cell 12 0");
 		
 		tuesday = new JLabel("0");
 		getContentPane().add(tuesday, "cell 0 1");
