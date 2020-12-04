@@ -11,3 +11,7 @@
 /ui/
 /Snippet.class
 /logic/
+/event/
+/SavingStat/
+/SaveToCsv/
+/log/

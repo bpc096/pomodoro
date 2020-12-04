@@ -14,6 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
+import event.SaveLongBreak;
+import logic.Pomodoro;
+
 public class LongBreakUI extends JFrame{
 	JButton btnLongBreakSkip = new JButton();
 	JButton btnLongBreakResume = new JButton();
@@ -100,12 +103,12 @@ public class LongBreakUI extends JFrame{
 				}
 					
 				if(LongBreakMinute == 0 && LongBreakSecond == 0) {
+					//selesai long break
 					LongBreakTimer.stop();
 					setVisible(false);
+					Pomodoro p = new Pomodoro();
+					p.broadcast(new SaveLongBreak());
 					new WorkUI().setVisible(true);
-					ViewStats stat = new ViewStats();
-					stat.addCount();
-					stat.setVisible(true);
 				}
 			}
 		});

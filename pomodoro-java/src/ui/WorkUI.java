@@ -5,11 +5,10 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
+import event.SaveWork;
 import logic.Pomodoro;
-import state.State;
 
 import java.awt.Font;
-import java.awt.Window;
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -124,6 +123,9 @@ public class WorkUI extends JFrame{
 						lb.setVisible(true);
 						setVisible(false);
 					}else {
+						//selesai work
+						Pomodoro p = new Pomodoro();
+						p.broadcast(new SaveWork());
 						BreakUI b = new BreakUI(state);
 						b.setVisible(true);
 						setVisible(false);	
