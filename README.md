@@ -21,9 +21,10 @@ front end sudah dibenerin / jadi:
 + menambahkan status state pada BreakUI (ada state hitamnya)
 + menghilangkan state pada long break karena tidak diperlukan
 
-backend sudah jadi, tetapi masih ada bug:
+backend sudah jadi
 + state sudah bisa jalan dengan lancar (sampai ke long break)
 + kalau program sudah dijalankan dan sampai akhir longbreak, nanti statistik sudah bisa nambah angka 1 sesuai hari pomodoro dijalankan
+tetapi masih ada bug:
 - walaupun sudah jadi, statistik masih tidak bisa tersimpan, alias kalau pomodoro dijalankan lagi akan tereset
 - kodingan masih barbar, tapi program sudah jadi. Harus dirapihin (banyak class tidak terpakai)
 
