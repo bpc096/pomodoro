@@ -14,21 +14,6 @@ cd pomodoro
 Please Use Eclipse IDE for better performance, you can use some Java IDE to run this project.
 Coding yourself and enjoyed!
 
-#### DOCUMENTATION
-front end sudah dibenerin / jadi:
-+ memperbaiki bug posisi state yang salah
-+ memperbaiki bug skip pada BreakUI & LongBreak (sebelumnya kalau di skip jadi kedouble)
-+ menambahkan status state pada BreakUI (ada state hitamnya)
-+ menghilangkan state pada long break karena tidak diperlukan
-
-backend sudah jadi
-+ state sudah bisa jalan dengan lancar (sampai ke long break)
-+ kalau program sudah dijalankan dan sampai akhir longbreak, nanti statistik sudah bisa nambah angka 1 sesuai hari pomodoro dijalankan
-
-tetapi masih ada bug:
-- walaupun sudah jadi, statistik masih tidak bisa tersimpan, alias kalau pomodoro dijalankan lagi akan tereset
-- kodingan masih barbar, tapi program sudah jadi. Harus dirapihin (banyak class tidak terpakai)
-
 # To change time speed and time duration
 
 
