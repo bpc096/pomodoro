@@ -7,7 +7,7 @@ Tugas Project Pomodoro untuk matakuliah Framework Layer Architecture
 On your local machine, clone this repo:
 
 ```
-git clone https://github.com/bpc096/pomodoro
+git clone https://github.com/bpc096/pomodoro.git
 cd pomodoro
 ```
 
