@@ -16,12 +16,14 @@ import javax.swing.Timer;
 
 import event.SaveLongBreak;
 import logic.Pomodoro;
+import state.LongBreakState;
 
 public class LongBreakUI extends JFrame{
 	JButton btnLongBreakSkip = new JButton();
 	JButton btnLongBreakResume = new JButton();
 	JLabel lblLongBreakTime = new JLabel("15:00");
 	JButton btnLongBreakViewStats = new JButton("view stats");
+	LongBreakState longBreakState;
 	
 	int LongBreakSecond = 0;
 	int LongBreakMinute = 15;
@@ -84,7 +86,7 @@ public class LongBreakUI extends JFrame{
 		
 	// to start the timer
 	private void resume() {
-		LongBreakTimer = new Timer(10, new ActionListener() {
+		LongBreakTimer = new Timer(1000, new ActionListener() {
 				
 			@Override
 			public void actionPerformed(ActionEvent e) {

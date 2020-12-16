@@ -23,7 +23,7 @@ public class Pomodoro implements Observerable<Event>{
 	}
 	
 	public void saveLongBreak() {
-		broadcast(new SaveLongBreak());
+		broadcast(new SaveLongBreak()); 
 	}
 	
 	public void saveWork() {

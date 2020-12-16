@@ -17,6 +17,8 @@ import javax.swing.Timer;
 import event.SaveBreak;
 import event.SaveWork;
 import logic.Pomodoro;
+import state.BreakState;
+import state.State;
 
 public class BreakUI extends JFrame{
 	JLabel breakState1 = new JLabel();
@@ -27,6 +29,8 @@ public class BreakUI extends JFrame{
 	JButton btnBreakResume = new JButton();
 	JLabel lblBreakTime = new JLabel("05:00");
 	JButton btnBreakViewStats = new JButton("view stats");
+	BreakState breakState;
+	State onState;
 	
 	int state = 1;
 	int breakSecond = 0;
@@ -116,7 +120,7 @@ public class BreakUI extends JFrame{
 		
 	// to start the timer
 	private void resume() {
-		breakTimer = new Timer(10, new ActionListener() {
+		breakTimer = new Timer(1000, new ActionListener() {
 				
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -167,8 +171,7 @@ public class BreakUI extends JFrame{
 	private void btnBreakViewStats() {
 		btnBreakViewStats.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ViewStats().setVisible(true);
-					
+				new ViewStats().setVisible(true);	
 			}
 		});
 	}
@@ -180,7 +183,6 @@ public class BreakUI extends JFrame{
 				if(clicked) {
 					btnBreakResume.setIcon(new ImageIcon("res/pause.png"));
 			        clicked = false;
-			        
 			        resume();
 			    } else {
 			    	btnBreakResume.setIcon(new ImageIcon("res/play.png"));
