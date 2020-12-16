@@ -23,19 +23,27 @@ To change time speed, go to
 change the variable (number 10), and choose from 10 (sonic the hedgehog fast), 100 (okay fast), 1000 (normal time)
 
 ```
-workTimer = new Timer(10, new ActionListener()
+# WorkUI.java
+workTimer = new Timer(1000, new ActionListener()
+
+# BreakUI.java
+breakTimer = new Timer(1000, new ActionListener()
+
+# LongBreakUI.java
+LongBreakTimer = new Timer(1000, new ActionListener()
 ```
 
 To change time duration, change it in declaration in global scope
 
 ```
-#WorkUI.java
+# WorkUI.java
 int workSecond = 0;
-int workMinute = 3;
+int workMinute = 25;
 ```
 
 don't forget to change the first format (also in global scope)
 
 ```
-JLabel lblWorkTime = new JLabel("03:00");
+
+JLabel lblWorkTime = new JLabel("25:00");
 ```
