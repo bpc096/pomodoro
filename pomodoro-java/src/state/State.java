@@ -1,8 +1,9 @@
 package state;
 
 public class State {
-
-	int state = 1;
+	
+	TimerState timerState;
+	int state;
 	
 	public int getState() {
 		return state;
@@ -12,8 +13,8 @@ public class State {
 		this.state = state;
 	}
 
-	public State() {
-		// TODO Auto-generated constructor stub
+	public State(TimerState timerState) {
+		this.timerState = timerState;
 	}
 
 }

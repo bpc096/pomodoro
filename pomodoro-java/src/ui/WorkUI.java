@@ -7,6 +7,8 @@ import javax.swing.Timer;
 
 import event.SaveWork;
 import logic.Pomodoro;
+import state.State;
+import state.WorkState;
 
 import java.awt.Font;
 import java.awt.Color;
@@ -26,9 +28,13 @@ public class WorkUI extends JFrame{
 	JButton btnWorkResume = new JButton();
 	JLabel lblWorkTime = new JLabel("25:00");
 	JButton btnWorkViewStats = new JButton("view stats");
+	WorkState workState;
+	State onState;
 		
 	int workSecond = 0;
+	
 	int workMinute = 25;
+	
 	boolean clicked = true;
 	String ddworkSecond, ddworkMinute;
 	DecimalFormat dFormat = new DecimalFormat("00");
@@ -98,7 +104,7 @@ public class WorkUI extends JFrame{
 	
 	// to start the timer
 	private void resume() {
-		workTimer = new Timer(10, new ActionListener() {
+		workTimer = new Timer(1000, new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
