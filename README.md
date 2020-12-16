@@ -29,6 +29,7 @@ workTimer = new Timer(10, new ActionListener()
 To change time duration, change it in declaration in global scope
 
 ```
+#WorkUI.java
 int workSecond = 0;
 int workMinute = 3;
 ```
